@@ -23,5 +23,14 @@ services:
         networks:
             elastic_lan:
 
+    logstash:
+        image: wachira90/logstash:7.10.1
+        container_name: logstash
+#        volumes:
+#            - ./pipeline/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+        ports:
+            - "5044:5044"
+            - "9600:9600"
+
 networks:
     elastic_lan:
